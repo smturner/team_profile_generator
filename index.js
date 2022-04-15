@@ -9,38 +9,27 @@ const employee = [];
 
 inquirer
 .prompt ([
-    // {
-    //     type: 'list',
-    //     name: 'addMember',
-    //     message: "What type of team member would you like to add? (use arrow keys)",
-    //     choices: ["Engineer", "Intern", "I don't want to add anymore team members"]
-    // }])
-    // .then(userInput) => {
-    //     switch(userInput.addNewEmployee){
-    //         case "Manager" :
-    //             add
-    //     }
-    // }
+//manager questions
     {
         type: 'input',
         name: 'name',
-        message: "What is the team manager's name?"
+        message: "What is your team manager's name?"
     },
     {
         type: 'number',
         name: 'id',
-        message: "What is the team amanger's id?"
+        message: "What is your team manager's id?"
     },
     
     {
         type: 'input',
         name: 'email',
-        message: "What is the team manager's email?"
+        message: "What is your team manager's email?"
     },
     {
-        type: 'input',
-        name: 'officeNum',
-        message: "What is the team manager's office number?"
+        type: 'number',
+        name: 'officeNumber',
+        message: "What is your team manager's office number?"
     },
     {
         type: 'list',
@@ -49,6 +38,70 @@ inquirer
         choices: ["Engineer", "Intern", "I don't want to add anymore team members"]
         },
 ])
+//engineer questions
+inquirer
+.prompt ([
+    {
+        type: 'input',
+        name: 'name',
+        message: "What is your engineer's name?"
+    },
+    {
+        type: 'number',
+        name: 'id',
+        message: "What is your engineer's id?"
+    },
+    
+    {
+        type: 'input',
+        name: 'email',
+        message: "What is your engineer's email?"
+    },
+    {
+        type: 'input',
+        name: 'gitHub',
+        message: "What is your engineer's GitHub username?"
+    },
+    {
+        type: 'list',
+        name: 'addMember',
+        message: "What type of team member would you like to add? (use arrow keys)",
+        choices: ["Engineer", "Intern", "I don't want to add anymore team members"]
+        },
+])
+//intern questions
+inquirer
+.prompt ([
+
+    {
+        type: 'input',
+        name: 'name',
+        message: "What is your intern's name?"
+    },
+    {
+        type: 'number',
+        name: 'id',
+        message: "What is your intern's id?"
+    },
+    
+    {
+        type: 'input',
+        name: 'email',
+        message: "What is your intern's email?"
+    },
+    {
+        type: 'input',
+        name: 'school',
+        message: "What school does your intern go to?"
+    },
+    {
+        type: 'list',
+        name: 'addMember',
+        message: "What type of team member would you like to add? (use arrow keys)",
+        choices: ["Engineer", "Intern", "I don't want to add anymore team members"]
+        },
+])
+
 
 // .then((answers) => {
 //     console.log(answers)
