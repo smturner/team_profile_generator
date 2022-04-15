@@ -1,9 +1,24 @@
 const inquirer = require ('inquirer');
 const jest = require('jest');
 const fs = require('fs')
+const Engineer = require("./lib/engineer");
+const Intern = require("./lib/intern");
+const Manager = require("./lib/manager")
 
 inquirer
 .prompt ([
+    // {
+    //     type: 'list',
+    //     name: 'addMember',
+    //     message: "What type of team member would you like to add? (use arrow keys)",
+    //     choices: ["Engineer", "Intern", "I don't want to add anymore team members"]
+    // }])
+    // .then(userInput) => {
+    //     switch(userInput.addNewEmployee){
+    //         case "Manager" :
+    //             add
+    //     }
+    // }
     {
         type: 'input',
         name: 'name',
