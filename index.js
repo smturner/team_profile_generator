@@ -1,10 +1,16 @@
 const inquirer = require ('inquirer');
 const jest = require('jest');
 const fs = require('fs')
+// const Employee = require("./lib/employee")
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 const Manager = require("./lib/manager")
 
+// bring in ne employlee?---look at less on26
+// const store = new Store("Big Al's Toy Barn", toys);
+const employee=[ ];
+
+e
 inquirer
 .prompt ([
     // {
