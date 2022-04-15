@@ -13,3 +13,5 @@
     --create a test for engineer, intern, manager and employee
 6. create css for the html so that it looks nice
     --use bootstrap to make it look nice
+
+    if you click on either of the names it will bring you through the questions otherwise it if you click no more it will stop the prompts---look at inquirer documentation
