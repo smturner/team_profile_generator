@@ -8,7 +8,7 @@ const generateManager = () => {
         </div>
         <div class="card-body">
             <p class="id">ID: ${manager.id}</p>
-            <p class="email">Email: ${manager.email}</p>
+            <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
             <p class="officeNumber">Office Number: ${manager.officeNumber}</p>
         </div>
     </div>
@@ -26,9 +26,9 @@ const generateEngineer = () => {
             <h4>Engineer</h4>
         </div>
         <div class="card-body">
-            <p class="id">${engineer.id}</p>
-            <p class="email">${engineer.email}</p>
-            <p class="gitHub">${engineer.gitHub}</p>
+            <p class="id"> Id: ${engineer.id}</p>
+            <p class="email"> Email: <a href= "mailto:${engineer.email}">${engineer.email}</a></p>
+            <p class="gitHub">GitHub: <a href="https://github.com/${engineer.gitHub}" target="blank">${engineer.gitHub}</a></p>
         </div>
     </div>
 </div>
@@ -44,9 +44,9 @@ const generateIntern = () => {
                 <h4>Intern</h4>
             </div>
             <div class="card-body">
-                <p class="id">${intern.id}</p>
-                <p class="email">${intern.email}</p>
-                <p class="school">${intern.school}</p>
+                <p class="id"> Id: ${intern.id}</p>
+                <p class="email">Email: <a href= "mailto:${intern.email}">${intern.email}</a></p>
+                <p class="school"> School: ${intern.school}</p>
             </div>
         </div>
     </div>
