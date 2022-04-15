@@ -21,9 +21,9 @@ describe('Engineer', ()=> {
     })
     describe('getRole()', () => {
         it('Can return "Manager"', () => {
-            const managerRole = 'Manager'
-            const engineer = new Engineer (managerRole);
-            expect (engineer.getRole()).toBe(managerRole)
+            const engineerRole = 'Engineer'
+            const engineer = new Engineer (engineerRole);
+            expect (engineer.getRole()).toBe(engineerRole)
         })
     })
 })
