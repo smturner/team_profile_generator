@@ -3,7 +3,7 @@
 
     const generateManager = (manager) => {
         // console.log('here is the data.name information', manager.name)
-         `
+       return  `
     <div class="col-4 mt-4">
     <div class="card h-100">
         <div class="card-header" style="background-color:rgb(231, 170, 129); color:white;">
@@ -22,7 +22,7 @@
     };
 
     const generateEngineer = (engineer) => {
-         `
+        return `
     <div class="col-4 mt-4">
     <div class="card h-100">
         <div class="card-header" style="background-color:rgb(231, 170, 129); color:white;">
@@ -40,7 +40,7 @@
     }
 
     const generateIntern = (intern) => {
-         `
+        return `
     <div class="col-4 mt-4">
         <div class="card h-100">
             <div class="card-header" style="background-color:rgb(231, 170, 129); color:white;">
@@ -57,42 +57,44 @@
     `
     }
 
-generateHTML = (data) => {
+const generateHTML = (data) => {
     cardsArray= [];
     console.log('these are the cards', cardsArray)
 
 for (let i=0; i< data.length; i++) {
     const employee = data[i];
     console.log('this is the data from', employee)
-    // const role = employee.getRole(); 
-    // console.log(role)
-    // switch(role) {
-    //     case 'Manager':
-    //         // console.log('here is the data for employee manager', employee)
-    //      generateManager(employee);
-    //      cardsArray.push(generateManager(employee));
-    //         break;
-    //     case 'Engineer' :
-    //         generateEngineer(employee);
-    //         cardsArray.push(generateEngineer(employee));
-    //     break;
-    //     case 'Intern':
-    //         generateIntern(employee);
-    //         cardsArray.push(generateIntern(employee))
-    //         break; 
-    // }
+    const role = employee.getRole(); 
+    console.log(role)
+    switch(role) {
+        case 'Manager':
+            // console.log('here is the data for employee manager', employee)
+         generateManager(employee);
+         cardsArray.push(generateManager(employee));
+            break;
+        case 'Engineer' :
+            generateEngineer(employee);
+            cardsArray.push(generateEngineer(employee));
+        break;
+        case 'Intern':
+            generateIntern(employee);
+            cardsArray.push(generateIntern(employee))
+            break; 
+    }
 
 }
+console.log(cardsArray)
 const teamCards = cardsArray.join ('')
-const generateTeam = generateTeamPage(teamCards);
-return generateTeam;
+// const generateTeam = generateTeamPage(teamCards);
+return teamCards;
 
 }
 
 
 
 const generateTeamPage = function (teamCards)  {
-    `
+    // console.log(teamCards)
+    return `
     <!DOCTYPE html>
 <html lang="en">
 
@@ -115,8 +117,9 @@ const generateTeamPage = function (teamCards)  {
     </div>
     <div class= "container">
     <div class = "row">
-    ${teamCards}
-    /div>
+    ${generateHTML(teamCards)}
+
+   </div>
 </div>
 </body>
 
@@ -124,4 +127,5 @@ const generateTeamPage = function (teamCards)  {
     `
 }
 
-    module.exports = generateHTML
+
+    module.exports = {generateTeamPage}
