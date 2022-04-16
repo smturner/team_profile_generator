@@ -3,7 +3,7 @@ const fs = require('fs')
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 const Manager = require("./lib/manager")
-const {generateTeamPage} = require("./src/generateHTML");
+const {generateHTML} = require("./src/generateHTML");
 // const { default: generate } = require('@babel/generator');
 
 const employeeArray = [];
@@ -134,28 +134,15 @@ const team = () => {
     }
     
     const createHTML= () => {
-        console.log(generateTeamPage(employeeArray))
-        fs.writeFile('./dist/index.html', generateTeamPage(employeeArray), function(err) {
+        // console.log(generateTeamPage(employeeArray))
+        fs.writeFile('./dist/index.html', generateHTML(employeeArray), function(err) {
             if(err) {
                 console.log(err)
             }else {
                 console.log('team profile created')
             }
         })
-
-        // const htmlPageContent= generateHTML(JSON.stringify (employeeArray))
-        // console.log('this is the information being pushed to the array:', employeeArray)
-        // fs.writeFile('./dist/index.html', JSON.stringify(employeeArray), function(err) {
-        //     if(err) {
-        //         console.log(err)
-        //     }else {
-        //         console.log('Your team profile has been created!')
-        //     }
-        // } )
     }
 };
-
-
-
 
 team()

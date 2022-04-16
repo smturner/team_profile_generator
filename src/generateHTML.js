@@ -1,8 +1,5 @@
-
-// const generateHTML = team => {
-
-    const generateManager = (manager) => {
-        // console.log('here is the data.name information', manager.name)
+//function to generate manager card with information
+   const generateManager = (manager) => {
        return  `
     <div class="col-4 mt-4">
     <div class="card h-100">
@@ -12,7 +9,7 @@
         </div>
         <div class="card-body">
             <p class="id">ID: ${manager.id}</p>
-            <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+            <p class="email">Email: <a href="mailto:${manager.email}" target="blank">${manager.email}</a></p>
             <p class="officeNumber">Office Number: ${manager.officeNumber}</p>
         </div>
     </div>
@@ -20,7 +17,7 @@
     `;
 
     };
-
+//function to generate engineer card with information
     const generateEngineer = (engineer) => {
         return `
     <div class="col-4 mt-4">
@@ -31,14 +28,14 @@
         </div>
         <div class="card-body">
             <p class="id"> Id: ${engineer.id}</p>
-            <p class="email"> Email: <a href= "mailto:${engineer.email}">${engineer.email}</a></p>
+            <p class="email"> Email: <a href= "mailto:${engineer.email}" target="blank">${engineer.email}</a></p>
             <p class="gitHub">GitHub: <a href="https://github.com/${engineer.gitHub}" target="blank">${engineer.gitHub}</a></p>
         </div>
     </div>
 </div>
     `
     }
-
+//function to generate intern card with information
     const generateIntern = (intern) => {
         return `
     <div class="col-4 mt-4">
@@ -49,26 +46,24 @@
             </div>
             <div class="card-body">
                 <p class="id"> Id: ${intern.id}</p>
-                <p class="email">Email: <a href= "mailto:${intern.email}">${intern.email}</a></p>
+                <p class="email">Email: <a href= "mailto:${intern.email}" target="blank">${intern.email}</a></p>
                 <p class="school"> School: ${intern.school}</p>
             </div>
         </div>
     </div>
     `
     }
-
-const generateHTML = (data) => {
+//push the array to the page
+const htmlPageContent = (data) => {
     cardsArray= [];
-    console.log('these are the cards', cardsArray)
-
 for (let i=0; i< data.length; i++) {
     const employee = data[i];
     console.log('this is the data from', employee)
     const role = employee.getRole(); 
     console.log(role)
+    //call each function--manager, engineer, intern from above
     switch(role) {
         case 'Manager':
-            // console.log('here is the data for employee manager', employee)
          generateManager(employee);
          cardsArray.push(generateManager(employee));
             break;
@@ -81,19 +76,16 @@ for (let i=0; i< data.length; i++) {
             cardsArray.push(generateIntern(employee))
             break; 
     }
-
 }
-console.log(cardsArray)
+//joining strings
 const teamCards = cardsArray.join ('')
-// const generateTeam = generateTeamPage(teamCards);
 return teamCards;
 
 }
 
 
-
-const generateTeamPage = function (teamCards)  {
-    // console.log(teamCards)
+//generate HTML page
+const generateHTML = function (teamCards)  {
     return `
     <!DOCTYPE html>
 <html lang="en">
@@ -104,21 +96,20 @@ const generateTeamPage = function (teamCards)  {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <title>Document</title>
+    <title>TeamProfileGenerator</title>
 
 </head>
 
 <body>
 
-    <div class="jumbotron jumbotron-fluid" style="background-color: rgb(231, 141, 129); color: white;">
-        <div class="container">
+<div class=" jumbotron-fluid" style="background-color: rgb(231, 141, 129); color: white; text-align: center; padding:30px;">
+<div class="container">
             <h1 class="display-4">Meet the Team</h1>
         </div>
     </div>
     <div class= "container">
-    <div class = "row">
-    ${generateHTML(teamCards)}
-
+    <div class = "row justify-content-center">
+    ${htmlPageContent(teamCards)}
    </div>
 </div>
 </body>
@@ -126,6 +117,4 @@ const generateTeamPage = function (teamCards)  {
 </html>
     `
 }
-
-
-    module.exports = {generateTeamPage}
+    module.exports = {generateHTML}
