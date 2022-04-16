@@ -11,6 +11,9 @@ div.card {
 .card-header{
     border-bottom: rgb(196, 109, 51) dotted 5px;
 }
+.card-body{
+    background-color: rgb(255, 246, 246);
+}
 
 h3
  {

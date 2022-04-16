@@ -80,7 +80,6 @@ const teamCards = cardsArray.join ('')
 return teamCards;
 }
 
-
 //generate HTML page
 const generateHTML = function (teamCards)  {
     return `

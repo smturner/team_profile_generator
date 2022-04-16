@@ -1,46 +1,41 @@
-# team_profile_generator
+ # Team Profile Generator  
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
 
-    5. create function to initialize the app
-        --divide it up based on employee
-            --inquire prompts split up by role
-            --some that are universal
+## Description
+This application was created to generate a team profile based on user input using Inquirer package from Node.js. It will display the inforamtion on a newly created HTML page with a style sheet. This project shows the use of Object Oriented Programing and testing using Jest.  
 
-                 --all teams need at least one manager, create a nested function to generate a manager with inquire prompts
-                      --create a new Manager object using the manager class and the data from the inquier prompts
-                      --push that object to the array of employees
-            
-            --do the same thing for Intern, and engineer 
-                --set them up as separate functions within the bigger function
-            
-            --use a prompt to ask if you'd like to create another employee or finish generating your team--use conditionals for logic
-                --switch statement or if else statements
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+- [License](#license)  
 
-            --create a function that stops the inquirer prompts and generates the html page
-                -use fs to write this file to the dist folder
-                
+## Installation
+You will need to make sure you have Node.js installed on your local machine. Once you've cloned down the repo you will need to run `npm i` in the integrated terminal to install the required dependences.   
 
-6.  create a helper function in your src folder to generate HTML file (smilar to generateMarkdown in your README generator)
-    -generate employee ccards for each type of employee, pass in the data from inquier prompts
-    -create an array to store the html, and then push html for each employee into the array and return as a string at the end
-    -make sure you're exporting this function and importing it to your index file
+## Usage
+This application is run using the integrated terminal and Node.js. 
+<ul>
+<li>To get the questions to start, run `node index.js` in the terminal. </li>
+<li>You will be prompted through questions about each employee starting with the manager.</li>
+<li>When you have answered the questions about the mamanger, you will be asked to choose which type of team memeber you would like to add next, enineer or intern.</li>
+<li>Once you have selected the team memenber, you will be prompted through similar questions with the last question being different for each team member.</li>
+<li>After all of your team members have been added you can click 'I don't want to add anymore team memebers' and a confirmation will pop up saying 'Your team profile has been generated'.</li>
+<li> You will find your newly created team HTML in the dist folder.</li>
+</ul>  
 
-7.
+## Tests
+When you open up the application run `npm run tests` to check that all tests are working properly.  
 
+## Questions  
+If you have any questions about this project, please email me directly at Turnersarah228@gmail.com.
 
+You can view more of my projects at https://github.com/smturner.
 
+## License
+Copyright (c) 2022 Sarah Turner
 
-1. create an index.js that prompts a user to ask questions
-2. use inquierer to ask questions and store the information
-    --figure out how to use inquier to keep asking questions
-3. have the information open up into a new HTML document
-    --create an outline in the html document that holds the information for each employee
-    --create a seperate folder that holds the HTML
-4. have classes with functions for each response
-    --create functions that pull the information that we want to use
-5. have test for each function
-    --create a test for engineer, intern, manager and employee
-6. create css for the html so that it looks nice
-    --use bootstrap to make it look nice
-
-    if you click on either of the names it will bring you through the questions otherwise it if you click no more it will stop the prompts---look at inquirer documentation
+This application is licensed by MIT. For more information on this license, visit <a href= "(https://opensource.org/licenses/MIT)">Open Source MIT</a>.  
