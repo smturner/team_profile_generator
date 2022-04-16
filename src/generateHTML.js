@@ -59,28 +59,28 @@
 
 generateHTML = (data) => {
     cardsArray= [];
+    console.log('these are the cards', cardsArray)
 
 for (let i=0; i< data.length; i++) {
     const employee = data[i];
     console.log('this is the data from', employee)
-    const role = employee.getRole(); 
-    console.log(role)
-    
-    switch(role) {
-        case 'Manager':
-            // console.log('here is the data for employee manager', employee)
-         generateManager(employee);
-         cardsArray.push(generateManager(employee));
-            break;
-        case 'Engineer' :
-            generateEngineer(employee);
-            cardsArray.push(generateEngineer(employee));
-        break;
-        case 'Intern':
-            generateIntern(employee);
-            cardsArray.push(generateIntern(employee))
-            break; 
-    }
+    // const role = employee.getRole(); 
+    // console.log(role)
+    // switch(role) {
+    //     case 'Manager':
+    //         // console.log('here is the data for employee manager', employee)
+    //      generateManager(employee);
+    //      cardsArray.push(generateManager(employee));
+    //         break;
+    //     case 'Engineer' :
+    //         generateEngineer(employee);
+    //         cardsArray.push(generateEngineer(employee));
+    //     break;
+    //     case 'Intern':
+    //         generateIntern(employee);
+    //         cardsArray.push(generateIntern(employee))
+    //         break; 
+    // }
 
 }
 const teamCards = cardsArray.join ('')

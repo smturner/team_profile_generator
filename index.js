@@ -6,7 +6,7 @@ const Manager = require("./lib/manager")
 const generateHTML = require("./src/generateHTML");
 // const { default: generate } = require('@babel/generator');
 
-let employeeArray = [];
+const employeeArray = [];
 
 const team = () => {
 
@@ -38,7 +38,7 @@ const team = () => {
                 const { name, id, email, officeNumber } = managerInput
                 const manager = new Manager(name, id, email, officeNumber)
                 employeeArray.push(manager)
-                console.log(manager)
+                // console.log(manager)
                 createTeam()
             })
     }
@@ -94,7 +94,7 @@ const team = () => {
                 const { name, id, email, gitHub } = engineerInput
                 const engineer = new Engineer(name, id, email, gitHub)
                 employeeArray.push(engineer)
-                console.log(engineer)
+                // console.log(engineer)
                 createTeam()
             })
     }
@@ -128,15 +128,15 @@ const team = () => {
                 const { name, id, email, school } = internInput
                 const intern = new Intern(name, id, email, school)
                 employeeArray.push(intern)
-                console.log(intern)
+                // console.log(intern)
                 createTeam()
             })
     }
     
     const createHTML= () => {
         // const htmlPageContent= generateHTML(JSON.stringify (employeeArray))
-        console.log(employeeArray)
-        fs.writeFile('./dist/index.html', generateHTML(employeeArray), function(err) {
+        // console.log('this is the information being pushed to the array:', employeeArray)
+        fs.writeFile('./dist/index.html', JSON.stringify(employeeArray), function(err) {
             if(err) {
                 console.log(err)
             }else {
@@ -145,6 +145,7 @@ const team = () => {
         } )
     }
 };
+
 
 
 
