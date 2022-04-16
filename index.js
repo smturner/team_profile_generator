@@ -1,14 +1,13 @@
 const inquirer = require('inquirer');
-const jest = require('jest');
 const fs = require('fs')
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 const Manager = require("./lib/manager")
 const generateHTML = require("./src/generateHTML");
-const { default: generate } = require('@babel/generator');
+// const { default: generate } = require('@babel/generator');
 
 let employeeArray = [];
-// console.log(employeeArray)
+
 const team = () => {
 
     const addManager = () => {
@@ -134,9 +133,9 @@ const team = () => {
                 createTeam()
             })
     }
-    const createHTML= () => {
-        // console.log(JSON.stringify(employeeArray))
-        fs.writeFile('./dist/index.html', JSON.stringify(employeeArray), function(err) {
+    const createHTML= (employeeArray) => {
+        // const htmlPageContent= generateHTML(JSON.stringify (employeeArray))
+        fs.writeFile('./dist/index.html', generateHTML(employeeArray), function(err) {
             if(err) {
                 console.log(err)
             }else {
@@ -144,6 +143,27 @@ const team = () => {
             }
         } )
     }
+    
 }
+
+// const generateHTML= ({name, email, id, officeNumber})=>
+
+//  `<!DOCTYPE html>
+//     <html lang="en">
+//     <head>
+//         <meta charset="UTF-8">
+//         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+//         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//         <title>Document</title>
+//     </head>
+//     <body>
+//         <h1>My name is ${name}</h1>
+//         <h2>I live in ${email}</h2>
+//         <h2>About me: ${id}</h2>
+//         <h2>Click here to see my LinkedIn profile: ${officeNumber}</h2>
+        
+//     </body>
+//     </html>`
+
 
 team()

@@ -1,6 +1,5 @@
 # team_profile_generator
 
-in index.js create an array to store all of your employees
 
     5. create function to initialize the app
         --divide it up based on employee
