@@ -1,3 +1,5 @@
+
+
 const generateManager = () => {
     return `
     <div class="col-4 mt-4">
