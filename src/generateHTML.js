@@ -5,7 +5,7 @@
     <div class="card h-100">
         <div class="card-header" style="background-color:rgb(231, 170, 129); color:white;">
             <h3>${manager.name}</h3>
-            <h4>Manager</h4>
+            <h4><i class="fa-solid fa-user-tie"></i> Manager</h4>
         </div>
         <div class="card-body">
             <p class="id">ID: ${manager.id}</p>
@@ -24,7 +24,7 @@
     <div class="card h-100">
         <div class="card-header" style="background-color:rgb(231, 170, 129); color:white;">
             <h3>${engineer.name}</h3>
-            <h4>Engineer</h4>
+            <h4> <i class="fa-solid fa-glasses"></i> Engineer</h4>
         </div>
         <div class="card-body">
             <p class="id"> Id: ${engineer.id}</p>
@@ -42,7 +42,7 @@
         <div class="card h-100">
             <div class="card-header" style="background-color:rgb(231, 170, 129); color:white;">
                 <h3>${intern.name}</h3>
-                <h4>Intern</h4>
+                <h4> <i class="fa-solid fa-graduation-cap"></i> Intern</h4>
             </div>
             <div class="card-body">
                 <p class="id"> Id: ${intern.id}</p>
@@ -58,9 +58,7 @@ const htmlPageContent = (data) => {
     cardsArray= [];
 for (let i=0; i< data.length; i++) {
     const employee = data[i];
-    console.log('this is the data from', employee)
     const role = employee.getRole(); 
-    console.log(role)
     //call each function--manager, engineer, intern from above
     switch(role) {
         case 'Manager':
@@ -80,14 +78,13 @@ for (let i=0; i< data.length; i++) {
 //joining strings
 const teamCards = cardsArray.join ('')
 return teamCards;
-
 }
 
 
 //generate HTML page
 const generateHTML = function (teamCards)  {
     return `
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -96,22 +93,22 @@ const generateHTML = function (teamCards)  {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/2a5ab65e4d.js" crossorigin="anonymous"></script>
+    <link rel ="stylesheet" href="style.css">
     <title>TeamProfileGenerator</title>
-
 </head>
 
 <body>
-
-<div class=" jumbotron-fluid" style="background-color: rgb(231, 141, 129); color: white; text-align: center; padding:30px;">
-<div class="container">
+    <div class=" jumbotron-fluid" style="background-color: rgb(231, 141, 129); color: white; text-align: center; padding:30px;">
+    <div class="container">
             <h1 class="display-4">Meet the Team</h1>
-        </div>
+    </div>
     </div>
     <div class= "container">
     <div class = "row justify-content-center">
-    ${htmlPageContent(teamCards)}
+        ${htmlPageContent(teamCards)}
    </div>
-</div>
+    </div>
 </body>
 
 </html>

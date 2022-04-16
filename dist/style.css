@@ -1,0 +1,28 @@
+
+body {
+    background-color:rgb(249, 230, 230)
+}
+
+
+div.card {
+    box-shadow: 10px 10px 5px rgb(160, 160, 160);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.card-header{
+    border-bottom: rgb(196, 109, 51) dotted 5px;
+}
+
+h3
+ {
+    font-size: 30px;
+}
+h4 {
+    font-size: 25px;
+}
+
+p {
+    font-size: 20px;
+}
+
+
+
