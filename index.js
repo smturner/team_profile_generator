@@ -132,10 +132,11 @@ const team = () => {
                 createTeam()
             })
     }
+    
     const createHTML= () => {
         // const htmlPageContent= generateHTML(JSON.stringify (employeeArray))
         console.log(employeeArray)
-        fs.writeFile('./dist/index.html', generateHTML(JSON.stringify(employeeArray)), function(err) {
+        fs.writeFile('./dist/index.html', generateHTML(employeeArray), function(err) {
             if(err) {
                 console.log(err)
             }else {
@@ -143,6 +144,8 @@ const team = () => {
             }
         } )
     }
-}
+};
+
+
 
 team()
