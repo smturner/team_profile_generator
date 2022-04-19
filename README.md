@@ -27,8 +27,16 @@ This application is run using the integrated terminal and Node.js.
 <li> You will find your newly created team HTML in the dist folder.</li>
 </ul>  
 
+View walk through video here-
+[Screencastify](https://drive.google.com/file/d/1gxpzAN9uhYz1QpeQPKfTxp1haZ4GNKSJ/view)
+<br>
+<img src= "./assets/samplepage.png">
+
 ## Tests
 When you open up the application run `npm run tests` to check that all tests are working properly.  
+
+## Links to Application
+<a href="https://github.com/smturner/team_profile_generator">GitHub Link</a>
 
 ## Questions  
 If you have any questions about this project, please email me directly at Turnersarah228@gmail.com.
